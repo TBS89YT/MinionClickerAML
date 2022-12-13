@@ -5,29 +5,25 @@ using UnityEngine;
 public class MinionScript : MonoBehaviour
 {
     public TokensScript ts;
-    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(MinionSetup());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     public void OnMinionClick()
     {
         ts.Tokens = ts.Tokens + 1;
         ts.TokensText.text = "Tokens: " + ts.Tokens;
+        PlayerPrefs.SetFloat("Tokens", ts.Tokens);
     }
     public IEnumerator MinionSetup()
     {
         for (; ; )
         {
+            yield return new WaitForSecondsRealtime(0.01f);
             ts.Tokens = ts.Tokens + 2;
             ts.TokensText.text = "Tokens: " + ts.Tokens;
-            yield return new WaitForSecondsRealtime(1.5f);
+            PlayerPrefs.SetFloat("Tokens", ts.Tokens);
+            yield return new WaitForSecondsRealtime(2f);
         }
     }
 }

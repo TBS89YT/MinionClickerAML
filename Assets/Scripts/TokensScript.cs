@@ -6,16 +6,16 @@ using UnityEngine.UI;
 public class TokensScript : MonoBehaviour
 {
 
-    public float Tokens = 0;
+    public float Tokens;
     public Text TokensText;
 
-    // Start is called before the first frame update
     void Start()
     {
-        TokensText.text = "Tokens: " + Tokens;
+        float savedtokens = PlayerPrefs.GetFloat("Tokens", 0);
+        Tokens = savedtokens;
+        TokensText.text = "Tokens: " + savedtokens;
     }
 
-    // Update is called once per frame
     void Update()
     {
         
