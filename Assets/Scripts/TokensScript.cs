@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class TokensScript : MonoBehaviour
 {
 
     public float Tokens;
     public Text TokensText;
+    public float LastTicks;
 
     void Start()
     {
