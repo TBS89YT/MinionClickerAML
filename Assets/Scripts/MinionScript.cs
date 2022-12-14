@@ -11,8 +11,8 @@ public class MinionScript : MonoBehaviour
     }
     public void OnMinionClick()
     {
-        ts.Tokens = ts.Tokens + 1;
-        ts.TokensText.text = "Tokens: " + ts.Tokens;
+        ts.Tokens = ts.Tokens + 1 *ts.TokensMultiplyer;
+        ts.TokensText.text = "Tokens: " + ts.Tokens + " x" + ts.TokensMultiplyer;
         PlayerPrefs.SetFloat("Tokens", ts.Tokens);
     }
     public IEnumerator MinionSetup()
@@ -20,8 +20,8 @@ public class MinionScript : MonoBehaviour
         for (; ; )
         {
             yield return new WaitForSecondsRealtime(0.01f);
-            ts.Tokens = ts.Tokens + 2;
-            ts.TokensText.text = "Tokens: " + ts.Tokens;
+            ts.Tokens = ts.Tokens + 2 * ts.TokensMultiplyer;
+            ts.TokensText.text = "Tokens: " + ts.Tokens + " x" + ts.TokensMultiplyer;
             PlayerPrefs.SetFloat("Tokens", ts.Tokens);
             yield return new WaitForSecondsRealtime(2f);
         }

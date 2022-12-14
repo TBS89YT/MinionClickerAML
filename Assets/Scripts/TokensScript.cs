@@ -9,17 +9,14 @@ public class TokensScript : MonoBehaviour
 
     public float Tokens;
     public Text TokensText;
-    public float LastTicks;
+    public float TokensMultiplyer = 1;
 
     void Start()
     {
         float savedtokens = PlayerPrefs.GetFloat("Tokens", 0);
         Tokens = savedtokens;
-        TokensText.text = "Tokens: " + savedtokens;
-    }
-
-    void Update()
-    {
-        
+        float tokensmultiplyer = PlayerPrefs.GetFloat("TokensMultiplyer", 1);
+        TokensMultiplyer = tokensmultiplyer;
+        TokensText.text = "Tokens: " + savedtokens + " x" + tokensmultiplyer;
     }
 }
