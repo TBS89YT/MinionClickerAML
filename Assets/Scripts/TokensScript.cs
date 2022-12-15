@@ -6,9 +6,9 @@ using System;
 
 public class TokensScript : MonoBehaviour
 {
-
     public float Tokens;
     public Text TokensText;
+    public Text MultiplierText;
     public float TokensMultiplyer = 1;
 
     void Start()
@@ -19,6 +19,7 @@ public class TokensScript : MonoBehaviour
         TokensMultiplyer = tokensmultiplyer;
         float roundedtokensfloat = Mathf.Round(Tokens);
         float roundedmultiplyerfloat = Mathf.Round(TokensMultiplyer);
-        TokensText.text = roundedtokensfloat + "$ x" + roundedmultiplyerfloat;
+        TokensText.text = roundedtokensfloat + "$";
+        MultiplierText.text = roundedmultiplyerfloat + "x";
     }
 }

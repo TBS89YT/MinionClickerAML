@@ -14,7 +14,8 @@ public class MinionScript : MonoBehaviour
         ts.Tokens = ts.Tokens + 1 *ts.TokensMultiplyer;
         float roundedtokensfloat = Mathf.Round(ts.Tokens);
         float roundedmultiplyerfloat = Mathf.Round(ts.TokensMultiplyer);
-        ts.TokensText.text = roundedtokensfloat + "$ x" + roundedmultiplyerfloat;
+        ts.TokensText.text = roundedtokensfloat + "$";
+        ts.MultiplierText.text = roundedmultiplyerfloat + "x";
         PlayerPrefs.SetFloat("Tokens", ts.Tokens);
     }
     public IEnumerator MinionSetup()
@@ -25,7 +26,8 @@ public class MinionScript : MonoBehaviour
             ts.Tokens = ts.Tokens + 2 * ts.TokensMultiplyer;
             float roundedtokensfloat = Mathf.Round(ts.Tokens);
             float roundedmultiplyerfloat = Mathf.Round(ts.TokensMultiplyer);
-            ts.TokensText.text = roundedtokensfloat + "$ x" + roundedmultiplyerfloat;
+            ts.TokensText.text = roundedtokensfloat + "$";
+            ts.MultiplierText.text = roundedmultiplyerfloat + "x";
             PlayerPrefs.SetFloat("Tokens", ts.Tokens);
             yield return new WaitForSecondsRealtime(2f);
         }

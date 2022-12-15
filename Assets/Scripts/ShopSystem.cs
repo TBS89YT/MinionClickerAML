@@ -55,6 +55,7 @@ public class ShopSystem : MonoBehaviour
         PlayerPrefs.SetFloat("HutPrice", HutPrice);
         float roundedtokensfloat = Mathf.Round(ts.Tokens);
         float roundedmultiplyerfloat = Mathf.Round(ts.TokensMultiplyer);
-        ts.TokensText.text = roundedtokensfloat + "$ x" + roundedmultiplyerfloat;
+        ts.TokensText.text = roundedtokensfloat + "$";
+        ts.MultiplierText.text = roundedmultiplyerfloat + "x";
     }
 }
