@@ -7,6 +7,8 @@ public class ShopSystem : MonoBehaviour
 {
     public GameObject ShopButton;
     public GameObject ShopImage;
+    public GameObject ShopText;
+    public Animator tween;
 
     public TokensScript ts;
 
@@ -24,13 +26,11 @@ public class ShopSystem : MonoBehaviour
     }
     public void OnShopClick()
     {
+        if(ShopText.transform.rotation.x == 0)
+        {
+            tween.SetTrigger("Highlighted");
+        }
         ShopImage.active = true;
-        ShopButton.active = false;
-    }
-    public void OnCloseShopClick()
-    {
-        ShopImage.active = false;
-        ShopButton.active = true;
     }
     public void OnPurchaseHut ()
     {

@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.000023842, y: -135}
-  m_SizeDelta: {x: 829.7889, y: 315.29}
+  m_AnchoredPosition: {x: -0.0000050779, y: -112.37}
+  m_SizeDelta: {x: 800, y: 276.3501}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &433740184
 MonoBehaviour:
@@ -835,17 +835,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898805749}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1948716723}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000869751, y: -0.0006713867}
+  m_AnchoredPosition: {x: -0.000869751, y: -0.0007324219}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1898805751
@@ -902,6 +902,7 @@ GameObject:
   - component: {fileID: 1948716727}
   - component: {fileID: 1948716726}
   - component: {fileID: 1948716725}
+  - component: {fileID: 1948716728}
   m_Layer: 5
   m_Name: Shop
   m_TagString: Untagged
@@ -950,7 +951,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 3
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1025,6 +1026,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948716722}
   m_CullTransparentMesh: 1
+--- !u!95 &1948716728
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948716722}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aa19c6aec1030e64e89090876879cb1e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2018863292
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,6 +1180,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShopButton: {fileID: 1948716722}
   ShopImage: {fileID: 1664850447}
+  ShopText: {fileID: 1898805749}
+  tween: {fileID: 1948716728}
   ts: {fileID: 2018863297}
   Hut: {fileID: 909692681}
   HutPrice: 25
