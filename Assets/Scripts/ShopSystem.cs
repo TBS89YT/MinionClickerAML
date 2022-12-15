@@ -48,13 +48,14 @@ public class ShopSystem : MonoBehaviour
         PlayerPrefs.SetInt("HutActive", 1);
         ts.Tokens = ts.Tokens - HutPrice;
         PlayerPrefs.SetFloat("Tokens", ts.Tokens);
-        ts.TokensMultiplyer = ts.TokensMultiplyer + 0.2f; //Multiplier von "* 1.2f" auf "+ 0.2" geändert
+        ts.TokensMultiplyer = ts.TokensMultiplyer + 0.2f;
         PlayerPrefs.SetFloat("TokensMultiplyer", ts.TokensMultiplyer);
         HutPrice = HutPrice * 1.6f;
+        HutPrice = Mathf.Round(HutPrice * 100.0f) * 0.01f;
         HutPriceText.GetComponent<Text>().text = HutPrice.ToString() + "$";
         PlayerPrefs.SetFloat("HutPrice", HutPrice);
-        float roundedtokensfloat = Mathf.Round(ts.Tokens);
-        float roundedmultiplyerfloat = Mathf.Round(ts.TokensMultiplyer);
+        float roundedtokensfloat = Mathf.Round(ts.Tokens * 100.0f) * 0.01f;
+        float roundedmultiplyerfloat = Mathf.Round(ts.TokensMultiplyer * 100.0f) * 0.01f;
         ts.TokensText.text = roundedtokensfloat + "$";
         ts.MultiplierText.text = roundedmultiplyerfloat + "x";
     }

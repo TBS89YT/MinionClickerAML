@@ -17,8 +17,8 @@ public class TokensScript : MonoBehaviour
         Tokens = savedtokens;
         float tokensmultiplyer = PlayerPrefs.GetFloat("TokensMultiplyer", 1);
         TokensMultiplyer = tokensmultiplyer;
-        float roundedtokensfloat = Mathf.Round(Tokens);
-        float roundedmultiplyerfloat = Mathf.Round(TokensMultiplyer);
+        float roundedtokensfloat = Mathf.Round(Tokens * 100.0f) * 0.01f;
+        float roundedmultiplyerfloat = Mathf.Round(TokensMultiplyer * 100.0f) * 0.01f;
         TokensText.text = roundedtokensfloat + "$";
         MultiplierText.text = roundedmultiplyerfloat + "x";
     }
