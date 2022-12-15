@@ -45,7 +45,7 @@ public class ShopSystem : MonoBehaviour
         PlayerPrefs.SetInt("HutActive", 1);
         ts.Tokens = ts.Tokens - HutPrice;
         PlayerPrefs.SetFloat("Tokens", ts.Tokens);
-        ts.TokensMultiplyer = ts.TokensMultiplyer * 1.2f;
+        ts.TokensMultiplyer = ts.TokensMultiplyer + 0.2f; //Multiplier von "* 1.2f" auf "+ 0.2" geändert
         PlayerPrefs.SetFloat("TokensMultiplyer", ts.TokensMultiplyer);
         HutPrice = HutPrice * 1.6f;
         PlayerPrefs.SetFloat("HutPrice", HutPrice);
