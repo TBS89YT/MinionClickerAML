@@ -8,6 +8,7 @@ public class ShopSystem : MonoBehaviour
     public GameObject ShopButton;
     public GameObject ShopImage;
     public GameObject ShopText;
+    public GameObject HutPriceText;
     public Animator tween;
 
     public TokensScript ts;
@@ -18,6 +19,7 @@ public class ShopSystem : MonoBehaviour
     void Start()
     {
         HutPrice = PlayerPrefs.GetFloat("HutPrice", 25);
+        HutPriceText.GetComponent<Text>().text = HutPrice.ToString() + "$";
         int hutisactive = PlayerPrefs.GetInt("HutActive", 0);
         if (hutisactive == 1)
         {
@@ -42,12 +44,14 @@ public class ShopSystem : MonoBehaviour
         {
             Hut.active = true;
         }
+
         PlayerPrefs.SetInt("HutActive", 1);
         ts.Tokens = ts.Tokens - HutPrice;
         PlayerPrefs.SetFloat("Tokens", ts.Tokens);
         ts.TokensMultiplyer = ts.TokensMultiplyer + 0.2f; //Multiplier von "* 1.2f" auf "+ 0.2" geändert
         PlayerPrefs.SetFloat("TokensMultiplyer", ts.TokensMultiplyer);
         HutPrice = HutPrice * 1.6f;
+        HutPriceText.GetComponent<Text>().text = HutPrice.ToString() + "$";
         PlayerPrefs.SetFloat("HutPrice", HutPrice);
         float roundedtokensfloat = Mathf.Round(ts.Tokens);
         float roundedmultiplyerfloat = Mathf.Round(ts.TokensMultiplyer);
