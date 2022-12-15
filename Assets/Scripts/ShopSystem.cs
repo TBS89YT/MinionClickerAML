@@ -16,6 +16,11 @@ public class ShopSystem : MonoBehaviour
     void Start()
     {
         HutPrice = PlayerPrefs.GetFloat("HutPrice", 25);
+        int hutisactive = PlayerPrefs.GetInt("HutActive", 0);
+        if (hutisactive == 1)
+        {
+            Hut.active = true;
+        }
     }
     public void OnShopClick()
     {
@@ -33,16 +38,19 @@ public class ShopSystem : MonoBehaviour
         {
             return;
         }
-        if (Hut.active = false)
+        if (Hut.active == false)
         {
             Hut.active = true;
         }
+        PlayerPrefs.SetInt("HutActive", 1);
         ts.Tokens = ts.Tokens - HutPrice;
         PlayerPrefs.SetFloat("Tokens", ts.Tokens);
         ts.TokensMultiplyer = ts.TokensMultiplyer * 1.2f;
         PlayerPrefs.SetFloat("TokensMultiplyer", ts.TokensMultiplyer);
         HutPrice = HutPrice * 1.6f;
         PlayerPrefs.SetFloat("HutPrice", HutPrice);
-        ts.TokensText.text = "Tokens: " + ts.Tokens + " x" + ts.TokensMultiplyer;
+        float roundedtokensfloat = Mathf.Round(ts.Tokens);
+        float roundedmultiplyerfloat = Mathf.Round(ts.TokensMultiplyer);
+        ts.TokensText.text = roundedtokensfloat + "$ x" + roundedmultiplyerfloat;
     }
 }
