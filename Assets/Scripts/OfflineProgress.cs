@@ -19,8 +19,8 @@ public class OfflineProgress : MonoBehaviour
     {
         if (focus)
         {
-            StartCoroutine(AddOfflineProgression());
             StartCoroutine(AddOfflineTime());
+            StartCoroutine(AddOfflineProgression());
         } else
         {
             PlayerPrefs.SetString("LAST_LOGIN", DateTime.Now.ToString());
@@ -35,10 +35,18 @@ public class OfflineProgress : MonoBehaviour
         yield return new WaitForSeconds(1);
         DateTime lastLogin = DateTime.Parse(PlayerPrefs.GetString("LAST_LOGIN"));
         TimeSpan ts = DateTime.Now - lastLogin;
-        offlineseconds.text = "Off-Time -> " + (int)ts.TotalSeconds +" Seconds";
-        StartCoroutine(AddOfflineProgression());
-        yield return new WaitForSeconds(8);
-        offlineseconds.text = "";
+        if (ts.TotalHours >= 6)
+        {
+            offlineseconds.text = "Off-Time -> 6 Hour [MAX]";
+            yield return new WaitForSeconds(8);
+            offlineseconds.text = "";
+        }
+        else
+        {
+            offlineseconds.text = "Off-Time -> " + (int)ts.TotalSeconds + " Seconds";
+            yield return new WaitForSeconds(8);
+            offlineseconds.text = "";
+        }
     }
     public IEnumerator AddOfflineProgression()
     {
@@ -49,14 +57,23 @@ public class OfflineProgress : MonoBehaviour
 
             TimeSpan ts = DateTime.Now - lastLogin;
 
-            tss.Tokens += (int)ts.TotalSeconds * 2 * tss.TokensMultiplyer;
+            if(ts.TotalHours >= 6)
+            {
+                offlineearnings.text = "Off-Earnings: " + 21600 * 2 * tss.TokensMultiplyer+"$ [MAX]";
+                tss.Tokens += 21600 * 2 * tss.TokensMultiplyer;
+                yield return new WaitForSeconds(8);
+                offlineearnings.text = "";
+            } else
+            {
+                tss.Tokens += (int)ts.TotalSeconds * 2 * tss.TokensMultiplyer;
 
-            print((int)ts.TotalSeconds * 2 * tss.TokensMultiplyer);
+                print((int)ts.TotalSeconds * 2 * tss.TokensMultiplyer);
 
-            print(ts.TotalSeconds.ToString());
-            offlineearnings.text = "Off-Earnings: "+ (int)ts.TotalSeconds * 2 * tss.TokensMultiplyer;
-            yield return new WaitForSeconds(8);
-            offlineearnings.text = "";
+                print(ts.TotalSeconds.ToString());
+                offlineearnings.text = "Off-Earnings: " + (int)ts.TotalSeconds * 2 * tss.TokensMultiplyer+"$";
+                yield return new WaitForSeconds(8);
+                offlineearnings.text = "";
+            }
         }
         else
         {

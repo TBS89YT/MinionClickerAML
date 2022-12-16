@@ -1086,7 +1086,7 @@ RectTransform:
   m_Children:
   - {fileID: 1911273996}
   m_Father: {fileID: 2018863296}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1536,8 +1536,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.00085901, y: -719.7102}
-  m_SizeDelta: {x: 696.9478, y: 1439.4165}
+  m_AnchoredPosition: {x: -0.00085901, y: -719.71}
+  m_SizeDelta: {x: 696.9478, y: 1439.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1664850449
 MonoBehaviour:
@@ -1762,14 +1762,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898805749}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1948716723}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.000869751, y: -0.0007324219}
@@ -1935,12 +1935,12 @@ RectTransform:
   - {fileID: 815206019}
   - {fileID: 1603226652}
   m_Father: {fileID: 2018863296}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 73.47998}
-  m_SizeDelta: {x: 277.2806, y: 146.96002}
+  m_AnchoredPosition: {x: 0.000005722, y: 79.334}
+  m_SizeDelta: {x: 277.2806, y: 158.6671}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1948716725
 MonoBehaviour:
@@ -2208,8 +2208,8 @@ RectTransform:
   - {fileID: 1063346737}
   - {fileID: 1207323656}
   - {fileID: 1554323080}
-  - {fileID: 1948716723}
   - {fileID: 1183769988}
+  - {fileID: 1948716723}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2255,6 +2255,7 @@ MonoBehaviour:
   ts: {fileID: 2018863297}
   Hut: {fileID: 909692681}
   Rolex: {fileID: 1107152736}
+  isshopopen: 0
   HutPrice: 150
   RolexPrice: 1500
 --- !u!114 &2018863299

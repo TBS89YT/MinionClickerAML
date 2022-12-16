@@ -17,6 +17,8 @@ public class ShopSystem : MonoBehaviour
     public GameObject Hut;
     public GameObject Rolex;
 
+    public bool isshopopen = false;
+
     public float HutPrice = 150;
     public float RolexPrice = 1500;
     void Start()
@@ -38,11 +40,14 @@ public class ShopSystem : MonoBehaviour
     }
     public void OnShopClick()
     {
-        if(ShopText.transform.rotation.x == 0)
+        if(isshopopen == true)
         {
-            tween.SetTrigger("Highlighted");
+            tween.PlayInFixedTime("Normal", 0, 0.9f);
+            isshopopen = false;
+        }else
+        {
+            isshopopen = true;
         }
-        ShopImage.active = true;
     }
     public void OnPurchaseHut ()
     {
