@@ -35,7 +35,7 @@ public class OfflineProgress : MonoBehaviour
         yield return new WaitForSeconds(1);
         DateTime lastLogin = DateTime.Parse(PlayerPrefs.GetString("LAST_LOGIN"));
         TimeSpan ts = DateTime.Now - lastLogin;
-        offlineseconds.text = "Off-Time: Sec: " + (int)ts.TotalSeconds;
+        offlineseconds.text = "Off-Time -> " + (int)ts.TotalSeconds +" Seconds";
         StartCoroutine(AddOfflineProgression());
         yield return new WaitForSeconds(8);
         offlineseconds.text = "";

@@ -22,9 +22,9 @@ public class ShopSystem : MonoBehaviour
     void Start()
     {
         HutPrice = PlayerPrefs.GetFloat("HutPrice", 150);
-        HutPriceText.GetComponent<Text>().text = HutPrice.ToString() + "$";
+        HutPriceText.GetComponent<Text>().text = ts.ChangeNumber(HutPrice).ToString() + "$";
         RolexPrice = PlayerPrefs.GetFloat("RolexPrice", 1500);
-        RolexPriceText.GetComponent<Text>().text = RolexPrice.ToString() + "$";
+        RolexPriceText.GetComponent<Text>().text = ts.ChangeNumber(RolexPrice).ToString() + "$";
         int hutisactive = PlayerPrefs.GetInt("HutActive", 0);
         int rolexisactive = PlayerPrefs.GetInt("RolexActive", 0);
         if (hutisactive == 1)
@@ -61,12 +61,11 @@ public class ShopSystem : MonoBehaviour
         PlayerPrefs.SetFloat("TokensMultiplyer", ts.TokensMultiplyer);
         HutPrice = HutPrice * 2f;
         HutPrice = Mathf.Round(HutPrice * 100.0f) * 0.01f;
-        HutPriceText.GetComponent<Text>().text = HutPrice.ToString() + "$";
+        HutPriceText.GetComponent<Text>().text = ts.ChangeNumber(HutPrice).ToString() + "$";
         PlayerPrefs.SetFloat("HutPrice", HutPrice);
-        float roundedtokensfloat = Mathf.Round(ts.Tokens * 100.0f) * 0.01f;
         float roundedmultiplyerfloat = Mathf.Round(ts.TokensMultiplyer * 100.0f) * 0.01f;
-        ts.TokensText.text = roundedtokensfloat + "$";
-        ts.MultiplierText.text = roundedmultiplyerfloat + "x";
+        ts.TokensText.text = ts.ChangeNumber(ts.Tokens).ToString() + "$";
+        ts.TokensMultiplyerText.text = roundedmultiplyerfloat + "x";
     }
     public void OnPurchaseRolex()
     {
@@ -85,11 +84,10 @@ public class ShopSystem : MonoBehaviour
         PlayerPrefs.SetFloat("TokensMultiplyer", ts.TokensMultiplyer);
         RolexPrice = RolexPrice * 3f;
         RolexPrice = Mathf.Round(RolexPrice * 100.0f) * 0.01f;
-        RolexPriceText.GetComponent<Text>().text = RolexPrice.ToString() + "$";
+        RolexPriceText.GetComponent<Text>().text = ts.ChangeNumber(RolexPrice).ToString() + "$";
         PlayerPrefs.SetFloat("RolexPrice", RolexPrice);
-        float roundedtokensfloat = Mathf.Round(ts.Tokens * 100.0f) * 0.01f;
         float roundedmultiplyerfloat = Mathf.Round(ts.TokensMultiplyer * 100.0f) * 0.01f;
-        ts.TokensText.text = roundedtokensfloat + "$";
-        ts.MultiplierText.text = roundedmultiplyerfloat + "x";
+        ts.TokensText.text = ts.ChangeNumber(ts.Tokens).ToString() + "$";
+        ts.TokensMultiplyerText.text = roundedmultiplyerfloat + "x";
     }
 }

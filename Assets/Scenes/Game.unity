@@ -582,7 +582,7 @@ GameObject:
   - component: {fileID: 855917281}
   - component: {fileID: 855917280}
   m_Layer: 5
-  m_Name: MultiplierText
+  m_Name: MultiplyerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1103,7 +1103,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Off-Earnings
+  m_Text: '
+
+'
 --- !u!222 &1207323655
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1203,7 +1205,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Off-Time
+  m_Text: '
+
+'
 --- !u!222 &1554323082
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1997,7 +2001,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tokens: 0
   TokensText: {fileID: 433740184}
-  MultiplierText: {fileID: 855917280}
+  TokensMultiplyerText: {fileID: 855917280}
   TokensMultiplyer: 1
 --- !u!114 &2018863298
 MonoBehaviour:
@@ -2020,7 +2024,7 @@ MonoBehaviour:
   ts: {fileID: 2018863297}
   Hut: {fileID: 909692681}
   Rolex: {fileID: 1107152736}
-  HutPrice: 25
+  HutPrice: 150
   RolexPrice: 1500
 --- !u!114 &2018863299
 MonoBehaviour:
