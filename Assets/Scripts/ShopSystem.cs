@@ -54,7 +54,6 @@ public class ShopSystem : MonoBehaviour
         {
             Hut.active = true;
         }
-
         PlayerPrefs.SetInt("HutActive", 1);
         ts.Tokens = ts.Tokens - HutPrice;
         PlayerPrefs.SetFloat("Tokens", ts.Tokens);

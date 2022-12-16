@@ -2019,7 +2019,7 @@ MonoBehaviour:
   tween: {fileID: 1948716728}
   ts: {fileID: 2018863297}
   Hut: {fileID: 909692681}
-  Rolex: {fileID: 1603226651}
+  Rolex: {fileID: 1107152736}
   HutPrice: 25
   RolexPrice: 1500
 --- !u!114 &2018863299
