@@ -43,7 +43,7 @@ public class OfflineProgress : MonoBehaviour
         }
         else
         {
-            offlineseconds.text = "Off-Time -> " + (int)ts.TotalSeconds + " Seconds";
+            offlineseconds.text = "Off-Time -> " + Mathf.Abs((float)ts.TotalMinutes) + " Minutes";
             yield return new WaitForSeconds(8);
             offlineseconds.text = "";
         }
@@ -59,7 +59,8 @@ public class OfflineProgress : MonoBehaviour
 
             if(ts.TotalHours >= 6)
             {
-                offlineearnings.text = "Off-Earnings: " + 21600 * 2 * tss.TokensMultiplyer+"$ [MAX]";
+                float moneytogive = 21600 * 2 * tss.TokensMultiplyer;
+                offlineearnings.text = "Off-Earnings: " + tss.ChangeNumber(moneytogive) + " [MAX]";
                 tss.Tokens += 21600 * 2 * tss.TokensMultiplyer;
                 yield return new WaitForSeconds(8);
                 offlineearnings.text = "";
@@ -70,7 +71,8 @@ public class OfflineProgress : MonoBehaviour
                 print((int)ts.TotalSeconds * 2 * tss.TokensMultiplyer);
 
                 print(ts.TotalSeconds.ToString());
-                offlineearnings.text = "Off-Earnings: " + (int)ts.TotalSeconds * 2 * tss.TokensMultiplyer+"$";
+                float moneytogive = (int)ts.TotalSeconds * 2 * tss.TokensMultiplyer;
+                offlineearnings.text = "Off-Earnings: " + tss.ChangeNumber(moneytogive);
                 yield return new WaitForSeconds(8);
                 offlineearnings.text = "";
             }
