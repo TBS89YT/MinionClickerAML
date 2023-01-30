@@ -35,18 +35,10 @@ public class OfflineProgress : MonoBehaviour
         yield return new WaitForSeconds(1);
         DateTime lastLogin = DateTime.Parse(PlayerPrefs.GetString("LAST_LOGIN"));
         TimeSpan ts = DateTime.Now - lastLogin;
-        if (ts.TotalHours >= 6)
-        {
-            offlineseconds.text = "Off-Time -> 6 Hour [MAX]";
-            yield return new WaitForSeconds(8);
-            offlineseconds.text = "";
-        }
-        else
-        {
-            offlineseconds.text = "Off-Time -> " + Mathf.Abs((float)ts.TotalMinutes) + " Minutes";
-            yield return new WaitForSeconds(8);
-            offlineseconds.text = "";
-        }
+        offlineseconds.text = "Off-Time -> " + Mathf.Abs((float)ts.TotalHours) + " Stunden";
+        yield return new WaitForSeconds(8);
+        offlineseconds.text = "";
+        
     }
     public IEnumerator AddOfflineProgression()
     {
@@ -56,26 +48,13 @@ public class OfflineProgress : MonoBehaviour
             DateTime lastLogin = DateTime.Parse(PlayerPrefs.GetString("LAST_LOGIN"));
 
             TimeSpan ts = DateTime.Now - lastLogin;
-
-            if(ts.TotalHours >= 6)
-            {
-                float moneytogive = 21600 * 2 * tss.TokensMultiplyer;
-                offlineearnings.text = "Off-Earnings: " + tss.ChangeNumber(moneytogive) + " [MAX]";
-                tss.Tokens += 21600 * 2 * tss.TokensMultiplyer;
-                yield return new WaitForSeconds(8);
-                offlineearnings.text = "";
-            } else
-            {
                 tss.Tokens += (int)ts.TotalSeconds * 2 * tss.TokensMultiplyer;
-
                 print((int)ts.TotalSeconds * 2 * tss.TokensMultiplyer);
-
                 print(ts.TotalSeconds.ToString());
                 float moneytogive = (int)ts.TotalSeconds * 2 * tss.TokensMultiplyer;
                 offlineearnings.text = "Off-Earnings: " + tss.ChangeNumber(moneytogive);
                 yield return new WaitForSeconds(8);
                 offlineearnings.text = "";
-            }
         }
         else
         {
